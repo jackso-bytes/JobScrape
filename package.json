@@ -1,0 +1,22 @@
+{
+  "name": "jobscrape-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tom0901/JobScrape-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tom0901/JobScrape-/issues"
+  },
+  "homepage": "https://github.com/Tom0901/JobScrape-#readme",
+  "devDependencies": {
+    "typescript": "^4.2.2"
+  }
+}
