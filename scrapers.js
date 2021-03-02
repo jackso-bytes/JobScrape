@@ -30,11 +30,11 @@ async function scrapeChannel(url, techInput) {
   //filtering the output 
   techInput = techInput.trim();  
   techInput = techInput.split(" ");
-  
+
   //cleaning strings to match for lower case
 
-  //techInput = techInput.forEach(it=> it.toLowerCase())
-  //titles = titles.forEach(it=>it.toLocaleLowerCase())
+  techInput = techInput.map(it=> it.toLowerCase())
+  titles = titles.map(it=> it.toLocaleLowerCase())
 
   const checker = (title) => {
     let doesTitleContain = techInput.some((tech) => {
