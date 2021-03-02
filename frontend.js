@@ -53,8 +53,8 @@ class UI {
     this.clearUI();
 
     //get arrays of  the data returned
-    let titleArray = data.jobData.titles,
-    hrefArray = data.jobData.hrefs;
+    let titleArray = data.titles,
+    hrefArray = data.hrefs;
 
     //iterate over array
 

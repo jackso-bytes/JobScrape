@@ -1,4 +1,6 @@
+const { Console } = require("console");
 const puppeteer = require("puppeteer");
+const { getConstantValue } = require("typescript");
 
 async function scrapeChannel(url, techInput) {
 
@@ -25,11 +27,24 @@ async function scrapeChannel(url, techInput) {
 
   browser.close();
 
-  console.log(techInput)
+  //filtering the output 
+  techInput = techInput.trim();  
+  techInput = techInput.split(" ");
+  
+  //cleaning strings to match for lower case
 
-  titles = titles.filter(title=> title.includes(techInput))
+  //techInput = techInput.forEach(it=> it.toLowerCase())
+  //titles = titles.forEach(it=>it.toLocaleLowerCase())
 
-  console.log(titles)
+  const checker = (title) => {
+    let doesTitleContain = techInput.some((tech) => {
+      let truthy = title.includes(tech);
+      return truthy; 
+    }); 
+    if(doesTitleContain) return true; 
+  }
+
+  titles = titles.filter((title)=> checker(title));
 
   return { titles, hrefs }; // arrays of strings
 }
