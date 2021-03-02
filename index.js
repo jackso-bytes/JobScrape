@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const port = 5500;
+const ip = process.env.IP || '0.0.0.0';
+const port = process.env.PORT || 5500;
 const bodyParser = require("body-parser");
 const scrapers = require("./scrapers");
 
