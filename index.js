@@ -23,7 +23,7 @@ app.listen(port, () =>
 );
 
 app.post("/something", async (req, res) => {
-  console.log(req.body);
-  const jobData = await scrapers.scrapeChannel(req.body.customURL);
+  console.log("something endpoint", req.body);
+  const jobData = await scrapers.scrapeChannel(req.body.customURL, req.body.techInput);
   res.send({ jobData });
 });

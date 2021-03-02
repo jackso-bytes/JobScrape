@@ -1,7 +1,6 @@
 const puppeteer = require("puppeteer");
 
-async function scrapeChannel(url) {
-  console.log("working scraper");
+async function scrapeChannel(url, techInput) {
 
   const browser = await puppeteer.launch({headless: false});
 
@@ -9,7 +8,7 @@ async function scrapeChannel(url) {
   await page.goto(url);
   await page.waitFor(1000);
 
-  const titles = await page.evaluate(() =>
+  let titles = await page.evaluate(() =>
     Array.from(
       document.querySelectorAll(".BjJfJf"),
       (element) => element.textContent
@@ -26,7 +25,13 @@ async function scrapeChannel(url) {
 
   browser.close();
 
-  return { titles, hrefs };
+  console.log(techInput)
+
+  titles = titles.filter(title=> title.includes(techInput))
+
+  console.log(titles)
+
+  return { titles, hrefs }; // arrays of strings
 }
 
 module.exports = {
