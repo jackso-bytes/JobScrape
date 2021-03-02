@@ -28,7 +28,7 @@ class UI {
   }
 
   async fetchData() {
-    const response = await fetch("http://localhost:5501/creators");
+    const response = await fetch("http://localhost:5500/creators");
     const data = await response.json();
     console.log(data);
 

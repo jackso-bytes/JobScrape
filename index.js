@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 5500;
 const bodyParser = require("body-parser");
-const scrapers = require("../scrapers");
+const scrapers = require("./scrapers");
 
 app.use(bodyParser.json());
 app.use(
